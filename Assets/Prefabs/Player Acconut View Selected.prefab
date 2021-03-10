@@ -16,7 +16,6 @@ MonoBehaviour:
   _collapse: 0
   _alpha: 1
   _fadeTime: 0.2
-  ViewPort: {fileID: 0}
 --- !u!114 &2551970573836189156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,6 +37,20 @@ MonoBehaviour:
   DstView: {fileID: 666175752368026476}
   Converter: {fileID: 0}
   DstChangedEventName: 
+--- !u!114 &4649049701783180008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149764693472878607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f09d100ccd5ea4db0fe159ff47d652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _top: 0
+  _viewport: {fileID: 0}
 --- !u!114 &6246824599160675404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,12 +65,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ViewModelName: TestScroll.ViewModel.PlayerAccountListViewModel
   BindingMode: 0
-  SrcPropertyName: PositionY
-  DstPropertyName: PositionY
-  SrcPropertyPath: 
-  DstPropertyPath: 
-  DstView: {fileID: 666175752368026476}
-  Converter: {fileID: 0}
+  SrcPropertyName: Position
+  DstPropertyName: position
+  SrcPropertyPath: y
+  DstPropertyPath: y
+  DstView: {fileID: 5499237569917438626}
+  Converter: {fileID: 4649049701783180008}
   DstChangedEventName: 
 --- !u!1001 &3097887841541069538
 PrefabInstance:
@@ -238,5 +251,10 @@ PrefabInstance:
 --- !u!1 &1149764693472878607 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2668699927062919917, guid: 226921e4e9de8bc4ca8cc3fba68bc277, type: 3}
+  m_PrefabInstance: {fileID: 3097887841541069538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &5499237569917438626 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7398534557519564864, guid: 226921e4e9de8bc4ca8cc3fba68bc277, type: 3}
   m_PrefabInstance: {fileID: 3097887841541069538}
   m_PrefabAsset: {fileID: 0}
