@@ -9,11 +9,11 @@ namespace TestScroll.View
     public class PlayerAccountView : CollectionViewItemBase<PlayerAccountModel>
     {
         public UnityEvent SlectionEvent { get; set; } = new UnityEvent();
-
+        
         [SerializeField] private GameObject[] _ratingSprites = new GameObject[3];
         [SerializeField] private Text _ratingText;
         [SerializeField] private Text _nameText;
-
+        //Bindable properties
         public RectTransform Transform { get => _transform; }
         public int Rating
         {
@@ -34,7 +34,7 @@ namespace TestScroll.View
         }
         public string Name { set { _nameText.text = value; } }
         public Vector3 Position { get => Transform.position; }
-
+        //Fields
         private RectTransform _transform;
         private int _rating = 1;
 

@@ -7,7 +7,8 @@ namespace TestScroll.ViewModel
 {
     public class PlayerAccountListViewModel : ViewModelBase
     {
-        public ObservableCollection<PlayerAccountModel> Models { get; private set; }
+        //Bindable properties
+        public ObservableCollection<PlayerAccountModel> Models { get; }
             = new ObservableCollection<PlayerAccountModel>();
         public PlayerAccountModel SelectedModel
         {
@@ -57,13 +58,16 @@ namespace TestScroll.ViewModel
                 }
             }
         }
-
+        //Fields
         private RectTransform _selectedView;
         private PlayerAccountModel _selectedModel;
         private Vector3 _position;
         private bool _isSelectionActive = false;
 
-
+        /// <summary>
+        /// Invokes by EventBinding, when player scrolls list
+        /// </summary>
+        /// <param name="position"></param>
         public void MoveSelectedView(Vector2 position)
         {
             if (IsSelectionActive)

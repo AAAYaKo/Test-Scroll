@@ -7,6 +7,7 @@ namespace TestScroll.View
     [RequireComponent(typeof(PlayerAccountView))]
     public class SelectedAccountView : ViewBase
     {
+        //Bindable property
         public PlayerAccountModel Current
         {
             set
@@ -16,7 +17,7 @@ namespace TestScroll.View
                 _accountView.UpdateItem(value, 0);
             }
         }
-
+        //Field
         private PlayerAccountView _accountView;
 
 
