@@ -6,10 +6,10 @@ namespace TestScroll.Converter
 {
     public class ClampToViewportConverter : ValueConverterBase
     {
-        [SerializeField] private float _bottom;
         [SerializeField] private RectTransform _viewport;
 
         private float _top;
+        private float _bottom;
 
 
         public override object Convert(object value, Type targetType, object parameter)
@@ -36,7 +36,14 @@ namespace TestScroll.Converter
 
         private void Awake()
         {
+            _bottom = GetComponent<RectTransform>().rect.height;
             _top = _viewport.rect.height;
+            //Add bottom ofset
+            var corners = new Vector3[4];
+            _viewport.GetWorldCorners(corners);
+            var offset = corners[0].y;
+            _top += offset;
+            _bottom += offset;
         }
     }
 }
