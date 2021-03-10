@@ -1,3 +1,4 @@
+using System;
 using TestScroll.Model;
 using UnityEngine;
 using UnityMVVM.View;
@@ -13,7 +14,7 @@ namespace TestScroll.View
             set
             {
                 if (value == null)
-                    return;
+                    throw new ArgumentNullException();
                 _accountView.UpdateItem(value, 0);
             }
         }
