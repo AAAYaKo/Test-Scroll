@@ -1,6 +1,5 @@
 using System.Collections.ObjectModel;
 using TestScroll.Model;
-using TestScroll.View;
 using UnityEngine;
 using UnityMVVM.ViewModel;
 
@@ -8,15 +7,14 @@ namespace TestScroll.ViewModel
 {
     public class PlayerAccountListViewModel : ViewModelBase
     {
-        [SerializeField] private PlayerAccountModel _selectedModel;
-
-        public ObservableCollection<PlayerAccountModel> Models { get; private set; } = new ObservableCollection<PlayerAccountModel>();
+        public ObservableCollection<PlayerAccountModel> Models { get; private set; }
+            = new ObservableCollection<PlayerAccountModel>();
         public PlayerAccountModel SelectedModel
         {
             get => _selectedModel;
             set
             {
-                if(value != _selectedModel)
+                if (value != _selectedModel)
                 {
                     _selectedModel = value;
                     NotifyPropertyChanged(nameof(SelectedModel));
@@ -28,7 +26,7 @@ namespace TestScroll.ViewModel
             get => _selectedView;
             set
             {
-                if(value != _selectedView)
+                if (value != _selectedView)
                 {
                     _selectedView = value;
                     NotifyPropertyChanged(nameof(SelectedView));
@@ -47,14 +45,29 @@ namespace TestScroll.ViewModel
                 }
             }
         }
+        public bool IsSelectionActive
+        {
+            get => _isSelectionActive;
+            set
+            {
+                if (value != _isSelectionActive)
+                {
+                    _isSelectionActive = value;
+                    NotifyPropertyChanged(nameof(IsSelectionActive));
+                }
+            }
+        }
 
         private RectTransform _selectedView;
+        private PlayerAccountModel _selectedModel;
         private Vector3 _position;
+        private bool _isSelectionActive = false;
 
 
         public void MoveSelectedView(Vector2 position)
         {
-            Position = _selectedView.position;
+            if (IsSelectionActive)
+                Position = _selectedView.position;
         }
 
         //TODO: Separete test

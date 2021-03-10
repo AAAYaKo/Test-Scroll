@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f09d100ccd5ea4db0fe159ff47d652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _top: 0
+  _bottom: 0
   _viewport: {fileID: 0}
 --- !u!114 &6246824599160675404
 MonoBehaviour:
@@ -72,6 +72,39 @@ MonoBehaviour:
   DstView: {fileID: 5499237569917438626}
   Converter: {fileID: 4649049701783180008}
   DstChangedEventName: 
+--- !u!114 &6521761600804533138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149764693472878607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc543ab5e622f54493a95f08e297c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collapse: 1
+  _invert: 0
+--- !u!114 &8211936383261821080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149764693472878607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d4a2a4e980aca64fa47198e564b8ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ViewModelName: TestScroll.ViewModel.PlayerAccountListViewModel
+  SrcPropertyName: IsSelectionActive
+  DstPropertyName: ElementVisibility
+  SrcPropertyPath: 
+  DstPropertyPath: 
+  _dstView: {fileID: 666175752368026476}
+  _converter: {fileID: 6521761600804533138}
 --- !u!1001 &3097887841541069538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79,6 +112,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 786039113394424099, guid: 226921e4e9de8bc4ca8cc3fba68bc277, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1525368575490429973, guid: 226921e4e9de8bc4ca8cc3fba68bc277, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -247,6 +284,8 @@ PrefabInstance:
     - {fileID: 8070998147498319701, guid: 226921e4e9de8bc4ca8cc3fba68bc277, type: 3}
     - {fileID: 2417539483644472466, guid: 226921e4e9de8bc4ca8cc3fba68bc277, type: 3}
     - {fileID: 323654997073870796, guid: 226921e4e9de8bc4ca8cc3fba68bc277, type: 3}
+    - {fileID: 786039113394424099, guid: 226921e4e9de8bc4ca8cc3fba68bc277, type: 3}
+    - {fileID: 3202789010442852735, guid: 226921e4e9de8bc4ca8cc3fba68bc277, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 226921e4e9de8bc4ca8cc3fba68bc277, type: 3}
 --- !u!1 &1149764693472878607 stripped
 GameObject:

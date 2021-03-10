@@ -238,6 +238,8 @@ GameObject:
   - component: {fileID: 2417539483644472466}
   - component: {fileID: 5032645766487584239}
   - component: {fileID: 323654997073870796}
+  - component: {fileID: 786039113394424099}
+  - component: {fileID: 4424151141299599790}
   m_Layer: 5
   m_Name: Player Acconut View
   m_TagString: Untagged
@@ -472,6 +474,60 @@ MonoBehaviour:
   SrcPropPath: 
   DstPropName: SelectedView
   DstPath: 
+  ArgType: 1
+  FloatArg: 0
+  IntArg: 0
+  StringArg: 
+  BoolArg: 0
+  ColorArg: {r: 1, g: 1, b: 1, a: 1}
+  SrcView: {fileID: 517058103640088908}
+  _dstViewModel: {fileID: 0}
+  converter: {fileID: 0}
+--- !u!114 &786039113394424099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668699927062919917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f248b5151f42845bdafc611cf5193b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ViewModelName: TestScroll.ViewModel.PlayerAccountListViewModel
+  SrcEventName: SlectionEvent
+  SrcPropName: SlectionEvent
+  SrcPropPath: 
+  DstPropName: IsSelectionActive
+  DstPath: 
+  ArgType: 5
+  FloatArg: 0
+  IntArg: 0
+  StringArg: 
+  BoolArg: 1
+  ColorArg: {r: 1, g: 1, b: 1, a: 1}
+  SrcView: {fileID: 517058103640088908}
+  _dstViewModel: {fileID: 0}
+  converter: {fileID: 0}
+--- !u!114 &4424151141299599790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668699927062919917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f248b5151f42845bdafc611cf5193b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ViewModelName: TestScroll.ViewModel.PlayerAccountListViewModel
+  SrcEventName: SlectionEvent
+  SrcPropName: Position
+  SrcPropPath: --
+  DstPropName: Position
+  DstPath: y
   ArgType: 1
   FloatArg: 0
   IntArg: 0

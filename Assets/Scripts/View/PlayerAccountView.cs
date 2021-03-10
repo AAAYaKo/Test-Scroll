@@ -14,10 +14,7 @@ namespace TestScroll.View
         [SerializeField] private Text _ratingText;
         [SerializeField] private Text _nameText;
 
-        public RectTransform Transform
-        {
-            get => _transform;
-        }
+        public RectTransform Transform { get => _transform; }
         public int Rating
         {
             set
@@ -36,6 +33,7 @@ namespace TestScroll.View
             }
         }
         public string Name { set { _nameText.text = value; } }
+        public Vector3 Position { get => Transform.position; }
 
         private RectTransform _transform;
         private int _rating = 1;
