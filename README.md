@@ -5,4 +5,4 @@
 - Scroll and change selection if you want
 ## Implemented by:
 - uGui (View Layout)
-- Unity-MVVM (Bindings ViewModel and Models)
+- Unity-MVVM (Architecture)
