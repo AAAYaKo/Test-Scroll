@@ -1,61 +1,72 @@
-using System;
 using TestScroll.Model;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityMVVM.Model;
 using UnityMVVM.View;
 
 namespace TestScroll.View
 {
-    public class PlayerAccountView : CollectionViewItemBase<PlayerAccountModel>, ISelectable
+    public class PlayerAccountView : CollectionViewItemBase<PlayerAccountModel>
     {
+        public UnityEvent SlectionEvent { get; set; } = new UnityEvent();
+
         [SerializeField] private GameObject[] _ratingSprites = new GameObject[3];
         [SerializeField] private Text _ratingText;
         [SerializeField] private Text _nameText;
 
-        public bool IsSelected
+        public RectTransform Transform
         {
-            get => _isSelected;
+            get => _transform;
+        }
+        public int Rating
+        {
             set
             {
-                if (_isSelected != value)
+                if (_rating < _ratingSprites.Length + 1)
                 {
-                    _isSelected = value;
-                    SetSelected(value);
+                    HideTopRatingSprite(_rating);
                 }
+                if (value < _ratingSprites.Length + 1)
+                {
+                    ShowTopRatingSprite(value);
+                }
+
+                _ratingText.text = value.ToString();
+                _rating = value;
             }
         }
+        public string Name { set { _nameText.text = value; } }
 
-        public Action<object, object> OnSelected { get; set; }
-        public Action<object, object> OnDeselected { get; set; }
-
-        private bool _isSelected = false;
+        private RectTransform _transform;
+        private int _rating = 1;
 
 
-        public override void InitItem(PlayerAccountModel model, int idx)
-        {
-            if (model.Rating < _ratingSprites.Length + 1)
-            {
-                ShowTopRatingSprite(model.Rating);
-            }
-            _ratingText.text = model.Rating.ToString();
-            _nameText.text = model.Name;
-        }
+        public override void InitItem(PlayerAccountModel model, int idx) { }
 
         public override void UpdateItem(PlayerAccountModel model, int newIdx)
         {
-            
+            Rating = model.Rating;
+            Name = model.Name;
         }
 
-        public void SetSelected(bool selected)
+        public void OnSelection()
         {
-            _isSelected = selected;
+            SlectionEvent.Invoke();
+        }
 
+        private void Awake()
+        {
+            _transform = GetComponent<RectTransform>();
         }
 
         private void ShowTopRatingSprite(int rating)
         {
             _ratingSprites[rating - 1].SetActive(true);
+        }
+
+        private void HideTopRatingSprite(int rating)
+        {
+            _ratingSprites[rating - 1].SetActive(false);
         }
     }
 }

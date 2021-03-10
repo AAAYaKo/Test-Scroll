@@ -231,7 +231,13 @@ GameObject:
   - component: {fileID: 8323058337420236986}
   - component: {fileID: 6780758162772208076}
   - component: {fileID: 517058103640088908}
-  - component: {fileID: 6260371424259011641}
+  - component: {fileID: 5325685834487501714}
+  - component: {fileID: 4703412722623904470}
+  - component: {fileID: 6516740363963445126}
+  - component: {fileID: 8070998147498319701}
+  - component: {fileID: 2417539483644472466}
+  - component: {fileID: 5032645766487584239}
+  - component: {fileID: 323654997073870796}
   m_Layer: 5
   m_Name: Player Acconut View
   m_TagString: Untagged
@@ -256,9 +262,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 35}
   m_SizeDelta: {x: 400, y: 70}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8323058337420236986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -315,7 +321,7 @@ MonoBehaviour:
   - {fileID: 2470783063807886562}
   _ratingText: {fileID: 2772128362324918658}
   _nameText: {fileID: 8938748072977333161}
---- !u!114 &6260371424259011641
+--- !u!114 &5325685834487501714
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -324,7 +330,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2668699927062919917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a98125502f715b4b83cfb77b434e436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -356,9 +362,125 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 6780758162772208076}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!114 &4703412722623904470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668699927062919917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8bd61c4f252b34281a706e0f5543de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6516740363963445126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668699927062919917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6254f6ce704a4a448c7af06a9bf9d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ViewModelName: TestScroll.ViewModel.PlayerAccountListViewModel
+  BindingMode: 2
+  SrcPropertyName: SelectedModel
+  DstPropertyName: Model
+  SrcPropertyPath: 
+  DstPropertyPath: 
+  DstView: {fileID: 517058103640088908}
+  Converter: {fileID: 0}
+  DstChangedEventName: SlectionEvent
+--- !u!114 &8070998147498319701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668699927062919917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f7b84aeead54a42b13d40839c1b658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _srcProp: Rating
+  _srcPath: 
+  _dstPath: 
+  _dstProp: Rating
+  _dstView: {fileID: 517058103640088908}
+  _converter: {fileID: 0}
+  SrcViewName: 
+--- !u!114 &2417539483644472466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668699927062919917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f7b84aeead54a42b13d40839c1b658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _srcProp: Name
+  _srcPath: 
+  _dstPath: 
+  _dstProp: Name
+  _dstView: {fileID: 517058103640088908}
+  _converter: {fileID: 0}
+  SrcViewName: 
+--- !u!114 &5032645766487584239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668699927062919917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6254f6ce704a4a448c7af06a9bf9d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ViewModelName: TestScroll.ViewModel.PlayerAccountListViewModel
+  BindingMode: 2
+  SrcPropertyName: SelectedModel
+  DstPropertyName: Model
+  SrcPropertyPath: 
+  DstPropertyPath: 
+  DstView: {fileID: 517058103640088908}
+  Converter: {fileID: 0}
+  DstChangedEventName: SlectionEvent
+--- !u!114 &323654997073870796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668699927062919917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f248b5151f42845bdafc611cf5193b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ViewModelName: TestScroll.ViewModel.PlayerAccountListViewModel
+  SrcEventName: SlectionEvent
+  SrcPropName: Transform
+  SrcPropPath: 
+  DstPropName: SelectedView
+  DstPath: 
+  ArgType: 1
+  FloatArg: 0
+  IntArg: 0
+  StringArg: 
+  BoolArg: 0
+  ColorArg: {r: 1, g: 1, b: 1, a: 1}
+  SrcView: {fileID: 517058103640088908}
+  _dstViewModel: {fileID: 0}
+  converter: {fileID: 0}
 --- !u!1 &4839015571884357997
 GameObject:
   m_ObjectHideFlags: 0

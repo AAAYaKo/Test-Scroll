@@ -5,7 +5,5 @@ namespace TestScroll.View
     public class PlayerAccountListView : CollectionViewBase
     {
 
-
-
     }
 }
